@@ -48,6 +48,16 @@ jobs:
       - name: Run Bandit (High & Critical)
         run: bandit -r api -lll
 
+
+    ############################################
+    # Scan des dépendances Python
+    ############################################
+      - name: Install Safety
+        run: pip install safety
+
+      - name: Dependency vulnerability scan
+        run: safety check -r requirements.txt
+
       # ==========================
       # 3. Scan secrets (Gitleaks)
       # ==========================
