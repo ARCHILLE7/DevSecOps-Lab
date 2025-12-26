@@ -56,7 +56,7 @@ jobs:
         run: pip install safety
 
       - name: Dependency vulnerability scan
-        run: safety check -r requirements.txt
+        run: safety check -r api/requirements.txt
 
       # ==========================
       # 3. Scan secrets (Gitleaks)
